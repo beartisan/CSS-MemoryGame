@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Quicksand:wght@500;700&display=swap');
+/* TABLE OF CONTENTS
+/* 1. General Styles
+/* 2. Overlay Styles
+/* 3. Card Styles
+/* 4. Results
+/* 5. Transition Styles
+*/
+
+
+
+/* general styles */
+*, *::before, *::after
+{
+    box-sizing: inherit;
+}
+
+html
+{
+    box-sizing:border-box;
+}
+
+body
+{
+    background-color: #FED639;
+    margin: 0;
+}
+
+h2
+{
+    font-size: 2em;
+    font-family: 'Archivo', sans-serif;
+}
+
+h3, h4, h5, p, button{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h2.memgame{
+    color: #bd1805;
+        animation: shaking 5s infinite;
+    }
+
+    @keyframes shaking {
+        0%, 100%{
+            transform: translateX(0);
+        }
+        20%
+        {
+            transform: translateX(-50px);
+        }
+        40%
+        {
+            transform: translateX(50px);
+        }
+        60% 
+        {
+            transform:  translateX(-30px);
+        }
+        80%
+        {
+            transform: translate(30px);
+        }
+        
+    }
+/* 
+div{
+    border: 1px solid black;
+} */
+
+/* Overlays Styles */
+
+#main
+{
+    margin: 0 auto;
+}
+
+.game-container
+{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: wrap;
+    height: 700px;
+    width: 700px;
+    background-color: rgb(229, 219, 200);
+    border-radius: 30px;
+}
+
+.show-container {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 2px black;
+    background-color: #fbd540;
+}
+
+
+.show-container.shown:first-child {
+    display: flex;
+    flex-direction: column;
+    animation: text-before-game 7s forwards;
+    /* animation-delay: 2s; */
+    font-size: 5em;
+}
+
+@keyframes text-before-game {
+    0%{
+    visibility:visible;
+    opacity:0;
+    background-color: rgba(0,0,0,0);
+    transform:scale(0,0);
+    }
+    100% {
+    font-size: 5em;
+    background-color: rgba(47, 47, 30, 0.6);
+    visibility: hidden;
+    animation-delay: 2s;
+    }
+}
+
+.show-container.shown:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    animation: winner 180s forwards;
+    display: none;
+}
+
+@keyframes winner {
+    0%{
+        background-color: rgba(246, 138, 138, 0);
+        font-size: 1em;
+    }
+    100% {
+        font-size: 4em;
+        background-color: rgba(183, 48, 38, 0.6);
+        visibility: hidden;
+        animation-delay: 2s;
+    }
+}
+
+.show-container.shown:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    animation: lost 200s forwards;
+    display: none;
+}
+
+@keyframes lost {
+    from{
+        background-color: rgba(246, 138, 138, 0);
+        font-size: 1em;
+    }
+    to {
+        font-size: 4em;
+        background-color: rgba(183, 48, 38, 0.6);
+        visibility: visible;
+    }
+}
+
+#begin:hover{
+    color: #f85133;
+    text-shadow: 1px 1px #341d1d;
+}
+
+#begin:active{
+    color: #bd1805;
+    text-shadow: 3px 2px #ffd4d4
+}
+
+/* Card styles */
+.card
+{
+    margin: 5px;
+    height: calc(30% - 40px);
+    width: calc(25% - 10px);
+    cursor: pointer;
+    position: relative;
+    transform: scale(1);
+    transition: transform 1.05s;
+    transform-style: preserve-3d;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    border:rgb(236, 57, 26) 3px solid;
+}
+
+.card-front-view, 
+.card-back-view{
+    position: absolute;
+    height: 100%;
+    width: 100%;    
+    backface-visibility: hidden;
+}
+
+
+
+/* results */
+
+.updates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results{
+    /* position: relative; */
+    border: 1px solid black;
+    margin: 20px auto;
+}
+
+
+a>h3, h2{
+    text-align: center;
+}
+
+.button >a{
+    text-decoration: none;
+    color: black;
+}
+
+/* .timer{
+    font-size: 2.5em;
+    padding: 1em;
+    margin: 0.5em;
+}
+
+.score { 
+    margin: 0.5em;
+    padding: 0 0.5em;
+    font-size: 2.5em;
+} */
+
+
+/* transition styles */
+
+.card:active{
+    transform: scale(1);
+    transition: transform .5s;
+}
+.card-back-view{
+  transform: rotateY(180deg);
+}
+
+
+
+.card.flip{
+    transform: rotateY(180deg);
+}
+
+    /* if the second card was not a match */
+
+
+/* huhuhu not working :( */
+.card.incorrect{
+    animation: vibrate 0.5s ease-out;
+}
+@keyframes vibrate {
+    0%, 100%{
+        transform: translateX(0);
+    }
+    20%
+    {
+        transform: translateX(-15px);
+    }
+    45%
+    {
+        transform: translateX(15px);
+    }
+    65% 
+    {
+        transform:  translateX(-7px);
+    }
+    90%
+    {
+        transform: translateX(7px);
+    }
+    
+}
+
+
+.play-again{
+    font-size: 0.5em;
+}
+
