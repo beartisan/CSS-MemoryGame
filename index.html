@@ -3,107 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project</title>
+    <title>Pick-a-Choose Memory Game</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="script/script.js"></script>
 </head>
 
 <body>
-    <header id="header">
-        <h2 class="memgame">Pair them all</h2>
-    </header>
-      
-    <main id="main">
-        <div class="show-container shown" id="startGame">
-            <h2>Pair the pokemons </h2> 
-            <span class="play-again" id="begin"><h3>Click to begin.</h3></span>
-        </div>
-        
-        <div id="congrats" class="show-container shown">
-            <h2>You Win!</h2>
-            <span class="play-again" ><h3>Play Again</h3></span>
-        </div>
-        <div id="loser" class="show-container shown">
-            <h2>You Lost!</h2>
-            <span class="play-again" ><h3>Try Again</h3></span>
-        </div>
+   <header id="header">
+    <h1 id="title-page">Pick-a-Choose</h1>
+   </header>
 
-        <div class="game-container">
-            <div class="card" id="card1" data-framework="bulbasaur">
-                <div class="card-front-view" id="front1"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item1"><img src="images/1.png" width="150" alt="Bulbasaur" class="bulbasaur"></div>
-            </div>
-            <div class="card" id="card2" data-framework="pikachu">
-                <div class="card-front-view" id="front2"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view"" id="item2"><img src="images/5.png" width="150" alt="Pikachu" class="pikachu"></div>
-            </div>
-            <div class="card" id="card3" data-framework="charmander">
-                <div class="card-front-view" id="front3"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item3"><img src="images/2.png" width="150" alt="Charmander" class="charmander"></div>
-            </div>
-            <div class="card" id="card4" data-framework="meow">
-                <div class="card-front-view" id="front4"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item4"><img src="images/4.png" width="150" alt="Meow" class="meow"></div>
-            </div>
-            <div class="card" id="card5" data-framework="herdier">
-                <div class="card-front-view" id="front5"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item5"><img src="images/3.png" width="150" alt="Herdier" class="herdier"></div>
-            </div>
-            <div class="card" id="card6" data-framework="squirtle">
-                <div class="card-front-view" id="front6"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item6"><img src="images/6.png" width="150" alt="Squirtle" class="squirtle"></div>
-            </div>
-            <div class="card" id="card7" data-framework="bulbasaur">
-                <div class="card-front-view" id="front7"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item7"><img src="images/1.png" width="150" alt="Bulbasaur" class="bulbasaur"></div>
-            </div>
-            <div class="card" id="card8" data-framework="pikachu">
-                <div class="card-front-view" id="front8"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item8"><img src="images/5.png" width="150" alt="Pikachu" class="pikachu"></div>
-            </div>
-            <div class="card" id="card9" data-framework="charmander">
-                <div class="card-front-view" id="front9"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item9"><img src="images/2.png" width="150" alt="charmander" class="charmander"></div>
-            </div>
-            <div class="card" id="card10" data-framework="meow">
-                <div class="card-front-view" id="front10"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item10"><img src="images/4.png" width="150" alt="meow" class="meow"></div>
-            </div>
-            <div class="card" id="card11" data-framework="herdier">
-                <div class="card-front-view" id="front11"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item11"><img src="images/3.png" width="150" alt="herdier" class="herdier"></div>
-            </div>
-            <div class="card" id="card12" data-framework="squirtle">
-                <div class="card-front-view" id="front12"><img src="images/pokemon logo.jpeg" width="150" alt="pokeball"></div>
-                <div class="card-back-view" id="item12"><img src="images/6.png" width="150" alt="squirtle" class="squirtle"></div>
-            </div>
-        </div>
- 
+   <!-- START -->
+   <div class="overlay-text visible">
+        Click to Start Picking
+   </div>
+   <!-- GAME OVER -->
+   <div class="victory-text visible">
+        You Win!
+   </div>
 
-    <!-- <div class="updates">
-        <div class="timer">00:00</div>
-        <div class="score"><h3>Score: 0</h3></div>
-        <div class="buttonReset"> <button id="resetGame">New Game</button></div>
-    </div>   -->
-
-    </main>
+    <footer id="footer">Copyright Beartisan, 2022.</footer>
 
 </body>
 
 </html>
-
-
-<!-- Resources: 
-
-    https://codingartistweb.com/2022/06/memory-game-javascript-project/ 
-    https://www.w3schools.com/howto/howto_css_flip_card.asp 
-    https://www.w3schools.com/js/js_timing.asp
-    https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style
-    https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
-
-    javascript:
-    https://stackoverflow.com/questions/44846614/trigger-css-animations-in-javascript 
-        https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-        https://www.youtube.com/watch?v=3uuQ3g92oPQ
-        https://www.youtube.com/watch?v=DABkhfsBAWw
--->

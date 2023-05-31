@@ -19,6 +19,16 @@ function pageLoad(){
     let sameCard = 0;
     let boxBoard = false;
 
+    // FOR flipCount
+    let flipCount = 0;
+    let flipCountElement = document.getElementById("flipCount");
+
+    // Update the flip count in the scoreboard
+    function updateFlipCount() {
+        flipCount++;
+        flipCountElement.innerText = flipCount;
+    }
+
     flipCard.forEach(card => card.addEventListener('click', thisCard))
 
     function thisCard(){
@@ -27,6 +37,12 @@ function pageLoad(){
         this.classList.add('flip'); 
         
         //if statements
+        
+        // Update the flip count when two cards are flipped
+        if (firstChoice && secondChoice) {
+          updateFlipCount();
+          
+      }
         //when first card is clicked
         if(!clickedCard){
             clickedCard = true;
@@ -111,7 +127,3 @@ function pageLoad(){
     flipCard.forEach(card=> {card.addEventListener("click", thisCard)})
 
 } // end pageLoaded
-
-
-
-//source: in HTML page
